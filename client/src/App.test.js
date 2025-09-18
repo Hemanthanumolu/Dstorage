@@ -1,8 +1,23 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+jest.mock(
+  './artifacts/contracts/Upload.sol/Upload.json',
+  () => ({
+    abi: [],
+  }),
+  { virtual: true }
+);
+
+jest.mock('axios', () => ({
+  post: jest.fn(() => Promise.resolve({ data: {} })),
+}));
+
+test('renders connect wallet prompt', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(
+    screen.getByRole('heading', { name: /connect your wallet/i })
+  ).toBeInTheDocument();
+  const walletButtons = screen.getAllByRole('button', { name: /connect wallet/i });
+  expect(walletButtons.length).toBeGreaterThan(0);
 });
