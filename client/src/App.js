@@ -10,6 +10,7 @@ import Header from "./components/Header";
 import AccessLog from "./components/AccessLog";
 import { Wallet, File, Users, Clock, Moon, Sun, Loader2, AlertCircle } from 'lucide-react';
 import "./App.css";
+import ChatbotWidget from "./components/ChatbotWidget";
 
 // Log the imported ABI structure immediately after import
 console.log("Imported Upload ABI:", Upload.abi);
@@ -164,6 +165,7 @@ function App() {
           {renderContent()}
         </div>
       </div>
+      <ChatbotWidget account={account} />
     </div>
   );
 }
