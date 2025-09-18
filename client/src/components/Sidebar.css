@@ -1,0 +1,282 @@
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.sidebar-header {
+  padding: 1.5rem 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+  transition: border-color 0.3s ease;
+}
+
+.sidebar-header h2 {
+  color: #2ecc71; /* Green */
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.sidebar-nav {
+  flex-grow: 1;
+  padding-top: 1rem;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  display: flex;
+  align-items: center;
+  padding: 0.9rem 1.5rem;
+  margin: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #555;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-nav li:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.sidebar-nav li.active {
+  background-color: #2ecc71; /* Green */
+  color: white;
+  font-weight: 500;
+}
+
+.sidebar-nav li.active svg {
+  stroke: white;
+}
+
+.sidebar-nav li svg {
+  margin-right: 1rem;
+  stroke: #555; /* Default icon color */
+  transition: stroke 0.2s ease;
+}
+
+.sidebar-nav li:hover svg {
+  stroke: #333;
+}
+
+.sidebar-footer {
+  margin-top: auto; /* Push footer to bottom */
+  padding: 1rem;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 0.75rem; /* Space between buttons */
+}
+
+.dark-mode-toggle,
+.connect-wallet-button-sidebar,
+.disconnect-wallet-button-sidebar { /* Apply base styles to all footer buttons */
+  background: none;
+  border: 1px solid transparent; /* Base border */
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center content */
+  text-align: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  width: 100%; /* Make buttons full width of footer padding */
+}
+
+.dark-mode-toggle span,
+.connect-wallet-button-sidebar span,
+.disconnect-wallet-button-sidebar span {
+  margin-left: 8px;
+}
+
+/* Connect Button Specific - Make Transparent */
+.connect-wallet-button-sidebar {
+  /* Remove background and border */
+  background-color: transparent;
+  border-color: transparent;
+  color: #2e7d32; /* Keep text/icon color */
+  justify-content: flex-start; /* Align text/icon left */
+  padding-left: 0; /* Adjust padding if needed */
+  padding-right: 0;
+}
+
+.connect-wallet-button-sidebar:hover {
+  /* Remove hover background/border, maybe add underline */
+  background-color: transparent;
+  border-color: transparent;
+  color: #1b5e20; /* Darken text/icon on hover */
+  text-decoration: underline;
+}
+
+/* Disconnect Button Specific - REMOVE or comment out if not needed */
+/*
+.disconnect-wallet-button-sidebar {
+  background-color: #ffebee; 
+  border-color: #ef9a9a;
+  color: #c62828;
+}
+.disconnect-wallet-button-sidebar:hover {
+  background-color: #ffcdd2;
+  border-color: #e57373;
+}
+*/
+
+/* New Connection Status Box Styles */
+.connection-status-box {
+  /* background-color: #e8f5e9; */ /* Removed green background */
+  /* border: 1px solid #a5d6a7; */ /* Removed border */
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 0.3rem; 
+}
+
+.connected-label {
+  font-size: 0.8rem;
+  /* color: #1b5e20; */ /* Changed from dark green */
+  color: #555; /* Standard text color */
+  font-weight: 500;
+}
+
+.connected-address {
+  font-size: 0.85rem;
+  /* color: #2e7d32; */ /* Changed from medium green */
+  color: #333; /* Slightly darker text color */
+  font-family: monospace; 
+  margin-bottom: 0.2rem; 
+}
+
+.disconnect-link {
+  background: none;
+  border: none;
+  color: #c62828; /* Keep Red color for disconnect */
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.2rem; 
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.disconnect-link:hover {
+  color: #e53935; 
+}
+
+/* Dark Mode Styles */
+.app-container.dark-mode .sidebar {
+  background-color: #34495e; /* Dark blue-grey */
+  border-right-color: #4a627a;
+}
+
+.app-container.dark-mode .sidebar-header {
+  border-bottom-color: #4a627a;
+}
+
+.app-container.dark-mode .sidebar-header h2 {
+  color: #2ecc71; /* Keep green */
+}
+
+.app-container.dark-mode .sidebar-nav li {
+  color: #bdc3c7; /* Lighter grey */
+}
+
+.app-container.dark-mode .sidebar-nav li:hover {
+  background-color: #4a627a;
+  color: #ecf0f1; /* Lightest grey */
+}
+
+.app-container.dark-mode .sidebar-nav li.active {
+  background-color: #2ecc71; /* Green */
+  color: white;
+}
+
+.app-container.dark-mode .sidebar-nav li svg {
+  stroke: #bdc3c7;
+}
+
+.app-container.dark-mode .sidebar-nav li:hover svg {
+  stroke: #ecf0f1;
+}
+
+.app-container.dark-mode .sidebar-nav li.active svg {
+  stroke: white;
+}
+
+.app-container.dark-mode .sidebar-footer {
+  border-top-color: #4a627a;
+}
+
+.app-container.dark-mode .dark-mode-toggle,
+.app-container.dark-mode .connect-wallet-button-sidebar,
+.app-container.dark-mode .disconnect-wallet-button-sidebar {
+  /* Adjust base dark mode styles if needed */
+  color: #bdc3c7;
+}
+
+/* Dark Mode Connect Button - Make Transparent */
+.app-container.dark-mode .connect-wallet-button-sidebar {
+  /* Remove background and border */
+  background-color: transparent;
+  border-color: transparent;
+  color: #66bb6a; /* Keep text/icon color (adjust if needed for dark) */
+}
+.app-container.dark-mode .connect-wallet-button-sidebar:hover {
+  /* Remove hover background/border, maybe add underline */
+  background-color: transparent;
+  border-color: transparent;
+  color: #a5d6a7; /* Lighten text/icon on hover */
+  text-decoration: underline;
+}
+
+/* Dark Mode Disconnect Button - REMOVE or comment out */
+/*
+.app-container.dark-mode .disconnect-wallet-button-sidebar {
+  background-color: #c62828; 
+  border-color: #ef5350;
+  color: #ffebee;
+}
+.app-container.dark-mode .disconnect-wallet-button-sidebar:hover {
+  background-color: #d32f2f;
+  border-color: #e57373;
+}
+*/
+
+/* Dark Mode Connection Status Box */
+.app-container.dark-mode .connection-status-box {
+  /* background-color: #2e7d32; */ /* Removed dark green background */
+  /* border-color: #4caf50; */ /* Removed border */
+}
+
+.app-container.dark-mode .connected-label {
+  /* color: #c8e6c9; */ /* Changed from light green */
+  color: #95a5a6; /* Lighter grey for dark mode */
+}
+
+.app-container.dark-mode .connected-address {
+  /* color: #a5d6a7; */ /* Changed from medium light green */
+  color: #bdc3c7; /* Standard light grey for dark mode */
+}
+
+.app-container.dark-mode .disconnect-link {
+  color: #ef9a9a; /* Keep Lighter red */
+}
+
+.app-container.dark-mode .disconnect-link:hover {
+  color: #e57373; 
+} 

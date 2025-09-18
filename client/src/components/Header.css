@@ -1,0 +1,62 @@
+.header {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed if user profile is added */
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  height: 65px; /* Fixed height */
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f4f7f6; /* Slightly off-white */
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  width: 400px; /* Adjust width as needed */
+  transition: background-color 0.3s ease;
+}
+
+.search-bar svg {
+  margin-right: 0.75rem;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  background: none;
+  flex-grow: 1;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.search-bar input::placeholder {
+  color: #999;
+}
+
+/* Dark Mode */
+.app-container.dark-mode .header {
+  background-color: #34495e; /* Dark blue-grey */
+  border-bottom-color: #4a627a;
+}
+
+.app-container.dark-mode .search-bar {
+  background-color: #2c3e50; /* Darker background */
+}
+
+.app-container.dark-mode .search-bar input {
+  color: #ecf0f1; /* Light text */
+}
+
+.app-container.dark-mode .search-bar input::placeholder {
+  color: #bdc3c7; /* Lighter placeholder */
+}
+
+.app-container.dark-mode .search-bar svg {
+  color: #bdc3c7 !important; /* Ensure icon color updates */
+} 
